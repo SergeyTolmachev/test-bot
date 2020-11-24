@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  test:
+    build:
+      context: ./test
+    env_file: ./test/test.env
+    environment:
+      - 'RUN_ENV=development'
+    ports:
+      - 5000:5000
+    depends_on:
+      - test-sqs
+  test-sqs:
+    image: roribio16/alpine-sqs
+    ports:
+      - 9324:9324
+      - 9325:9325
+    volumes:
+      - ./elasticmq.conf:/opt/config/elasticmq.conf
+networks:
+  default:
+    name: ${DOCKER_NETWORK}

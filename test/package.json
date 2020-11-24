@@ -1,0 +1,16 @@
+{
+  "description": "Тестовые задачи;",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SergeyTolmachev",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.798.0",
+    "os": "^0.1.1",
+    "sqs-consumer": "^5.5.0"
+  }
+}
